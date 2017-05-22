@@ -22,7 +22,9 @@ class Test1:
             code_from_server = r.status_code
             if code==code_from_server:
               print("Ok %d" % code_from_server)
-              if code==200:
+            else:
+              print('Error, code %d is not matched as expect result %d' % (code_from_server,code) )
+            if code_from_server==200:
                   try:
                       assert 'Cheap Essay Writing Service Online' or 'Best Essays for Cheap, Affordable Prices' in driver.title
                       print('Assertion test pass')
@@ -41,9 +43,6 @@ class Test1:
                   except Exception as e:
                        print('Error, description is not corrected',format(e))
 
-
-            else:
-              print('Error, code %d is not matched as expect result %d' % (code_from_server,code) )
 
 
 
